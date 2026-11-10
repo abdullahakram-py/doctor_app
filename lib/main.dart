@@ -1,4 +1,5 @@
-import 'package:doctor_app/doctorlist.dart';
+
+import 'package:doctor_app/topdoctors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Doctorlist(),
+      home: Topdoctors(),
     );
   }
 }
