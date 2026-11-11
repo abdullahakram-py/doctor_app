@@ -119,7 +119,7 @@ class _DetailState extends State<Detail> {
                                                                             ],
                                                                           ),
                                                                           ),
-                                                                         
+                                             
                                                                           Row(
                                                                             children: [
                                                                               Container(

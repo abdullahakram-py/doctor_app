@@ -1,3 +1,4 @@
+import 'package:doctor_app/topdoctors.dart';
 import 'package:flutter/material.dart';
 
 class Doctorslist extends StatefulWidget {
@@ -28,14 +29,19 @@ class _DoctorslistState extends State<Doctorslist> {
                     child: Row(
                       mainAxisAlignment:MainAxisAlignment.spaceBetween ,
                       children: [
-                        Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(45),
-                            color: const Color.fromARGB(157, 255, 255, 255),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Topdoctors()));
+                          },
+                          child: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(45),
+                              color: const Color.fromARGB(157, 255, 255, 255),
+                            ),
+                            child: Icon(Icons.arrow_back_ios),
                           ),
-                          child: Icon(Icons.arrow_back_ios),
                         ),
                         Text('Doctors List',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold),),
                         Container(
@@ -307,9 +313,9 @@ class _DoctorslistState extends State<Doctorslist> {
                                                       ),
                                                       child: Icon(Icons.chat_rounded,color: Colors.black,),
                                                       ), ),
-                               
+                                
                                                       ),
-                                                       Container(
+                                                        Container(
                                                       height: 45,
                                                       width: 45,
                                                       decoration: BoxDecoration(
@@ -325,10 +331,10 @@ class _DoctorslistState extends State<Doctorslist> {
                                                       ),
                                                       child: Icon(Icons.supervisor_account_outlined,color: Colors.black,),
                                                       ), ),
-                               
+                                
                                                       ),
-                     ],
-                   ),  
+                      ],
+                    ),  
                                                       
                 
             ],
