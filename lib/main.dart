@@ -1,6 +1,8 @@
 
 import 'package:doctor_app/detail.dart';
 import 'package:doctor_app/doctorslist.dart';
+import 'package:doctor_app/fitness.dart';
+import 'package:doctor_app/login.dart';
 import 'package:doctor_app/topdoctors.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Detail(),
+      home: Login(),
     );
   }
 }

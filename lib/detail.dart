@@ -461,7 +461,7 @@ class _DetailState extends State<Detail> {
                                                                             ),
                                                                             child:Center(child: Text('Book Appointment',style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold),)),
                                                                             ),
-          ),                                                    
+          ),                              
         ],
       ),
     );

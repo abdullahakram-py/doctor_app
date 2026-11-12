@@ -523,7 +523,7 @@ class _TopdoctorsState extends State<Topdoctors> {
                   ),
                   SizedBox(width: 10,),
                   Row(
-                      
+                      mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
                                                         height: 45,
