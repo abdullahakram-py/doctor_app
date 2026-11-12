@@ -19,6 +19,8 @@ class _CreateaccState extends State<Createacc> {
   bool ismail = false;
   bool isphnum = false;
   bool ispass = false;
+  bool ischeck = false;
+  bool ischeck2 = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,8 +70,8 @@ class _CreateaccState extends State<Createacc> {
           isname == true?
             Row(
               children: [
-                SizedBox(width: 30,)
-,                Text("Enter your name"),
+                SizedBox(width: 30,),
+                Text("Enter your name",style: TextStyle(fontSize: 12,color:Color.fromARGB(255, 232, 73, 29)),),
               ],
             ): Container(),
             Padding(
@@ -114,7 +116,7 @@ class _CreateaccState extends State<Createacc> {
             Row(
               children: [
                 SizedBox(width: 30,),
-                Text("Enter your mail"),
+                Text("Enter your mail",style: TextStyle(fontSize: 12,color:Color.fromARGB(255, 232, 73, 29)),),
               ],
             ) : Container(),
             Padding(
@@ -169,7 +171,7 @@ class _CreateaccState extends State<Createacc> {
               Row(
                 children: [
                     SizedBox(width: 30,),
-                  Text("Enter your Phone Number!"),
+                  Text("Enter your Phone Number!",style: TextStyle(fontSize: 12,color:Color.fromARGB(255, 232, 73, 29)),),
                 ],
               ) : Container(),
             Padding(
@@ -188,7 +190,7 @@ class _CreateaccState extends State<Createacc> {
                   }
                 },
                 controller:pass ,
-                obscureText: isacc, 
+                obscureText: isacc,
               
               decoration: InputDecoration(
                 
@@ -230,9 +232,32 @@ class _CreateaccState extends State<Createacc> {
             Row(
               children: [
                 SizedBox(width: 30,),
-                Text("Enter your password"),
+                Text("Enter your password",style: TextStyle(fontSize: 12,color:Color.fromARGB(255, 232, 73, 29)),),
               ],
-            ) : Container(), 
+            ) : Container(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                children: [
+                  Checkbox(
+                    focusColor: Colors.amber,
+                    activeColor: Colors.orange,
+                    checkColor: Colors.red,
+                    value: ischeck, onChanged: (bool? newValue){
+                    setState(() {
+                      ischeck = newValue?? false;
+                      ischeck2=  false;
+                      
+                    });
+                  }),
+                  Text(
+                        
+                        'Accept all Terms and Conditions',style: TextStyle(fontSize: 12,color:
+                        ischeck2 == true?Colors.red:
+                        Color.fromARGB(255, 140, 103, 73) ,),),
+                ],
+                ),
+              ), 
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -245,7 +270,16 @@ class _CreateaccState extends State<Createacc> {
               ),
               GestureDetector(
                 onTap: () {
-                  if(name.text.isEmpty)
+                  if(name.text.isEmpty && mail.text.isEmpty && phnum.text.isEmpty && pass.text.isEmpty)
+                  {
+                    setState(() {
+                    isname = true;
+                    ismail = true;
+                    isphnum = true;
+                    ispass = true;
+                    });
+                  }
+                  else if(name.text.isEmpty)
                   {
                   setState(() {
                     isname = true;
@@ -266,6 +300,11 @@ class _CreateaccState extends State<Createacc> {
                   else if(pass.text.isEmpty){
                     setState(() {
                       ispass = true;
+                    });
+                  }
+                  else if(ischeck == false){
+                    setState(() {
+                      ischeck2 = true;
                     });
                   }
                   else{
