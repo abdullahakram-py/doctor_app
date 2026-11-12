@@ -1,4 +1,5 @@
 
+import 'package:doctor_app/Createacc.dart';
 import 'package:doctor_app/detail.dart';
 import 'package:doctor_app/doctorslist.dart';
 import 'package:doctor_app/fitness.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Signin(),
+      home: Createacc(),
     );
   }
 }

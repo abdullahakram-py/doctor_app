@@ -12,6 +12,9 @@ class _SigninState extends State<Signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor:Color.fromARGB(255, 243, 237, 224), 
+      ),
       backgroundColor: Color.fromARGB(255, 243, 237, 224),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -36,7 +39,7 @@ class _SigninState extends State<Signin> {
                     
                     borderSide:BorderSide(
                       color: Color.fromARGB(255, 232, 73, 29),
-              
+                      
                       
                     ),
                     borderRadius: BorderRadius.circular(20)
@@ -67,9 +70,12 @@ class _SigninState extends State<Signin> {
                     });
                     
                   },
-                  child: Icon(
-                    issign == false?
-                    Icons.visibility : Icons.visibility_off),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      issign == false?
+                      "Hide" : 'Show'),
+                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
